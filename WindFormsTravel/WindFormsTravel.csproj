@@ -103,6 +103,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ClassLibrary.Class1.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.CLIENT.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.ClientSearch.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.COMPANY.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.DESTINATION.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.DSLibrary.datasource" />

@@ -53,6 +53,7 @@
     <Compile Include="CLIENT.cs">
       <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientSearch.cs" />
     <Compile Include="COMPANY.cs">
       <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>

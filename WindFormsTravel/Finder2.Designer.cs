@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clientNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientBORNDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.managerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cLIENTDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-   
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxManagerSurname = new System.Windows.Forms.TextBox();
@@ -48,9 +41,15 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonSearch = new System.Windows.Forms.Button();
+            this.clientSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOFBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTDTBindingSource)).BeginInit();
-    
+            ((System.ComponentModel.ISupportInitialize)(this.clientSearchBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -62,60 +61,17 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clientNAMEDataGridViewTextBoxColumn,
-            this.clientSURNAMEDataGridViewTextBoxColumn,
-            this.clientBORNDataGridViewTextBoxColumn,
-            this.managerSURNAMEDataGridViewTextBoxColumn,
-            this.orderNAMEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.cLIENTDTBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dateOFBirthDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.clientSearchBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 241);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(651, 196);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // clientNAMEDataGridViewTextBoxColumn
-            // 
-            this.clientNAMEDataGridViewTextBoxColumn.DataPropertyName = "Client_NAME";
-            this.clientNAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.clientNAMEDataGridViewTextBoxColumn.Name = "clientNAMEDataGridViewTextBoxColumn";
-            // 
-            // clientSURNAMEDataGridViewTextBoxColumn
-            // 
-            this.clientSURNAMEDataGridViewTextBoxColumn.DataPropertyName = "Client_SURNAME";
-            this.clientSURNAMEDataGridViewTextBoxColumn.HeaderText = "SURNAME";
-            this.clientSURNAMEDataGridViewTextBoxColumn.Name = "clientSURNAMEDataGridViewTextBoxColumn";
-            // 
-            // clientBORNDataGridViewTextBoxColumn
-            // 
-            this.clientBORNDataGridViewTextBoxColumn.DataPropertyName = "Client_BORN";
-            this.clientBORNDataGridViewTextBoxColumn.HeaderText = "BORN";
-            this.clientBORNDataGridViewTextBoxColumn.Name = "clientBORNDataGridViewTextBoxColumn";
-            // 
-            // managerSURNAMEDataGridViewTextBoxColumn
-            // 
-            this.managerSURNAMEDataGridViewTextBoxColumn.DataPropertyName = "Manager_SURNAME";
-            this.managerSURNAMEDataGridViewTextBoxColumn.HeaderText = "Manager_SURNAME";
-            this.managerSURNAMEDataGridViewTextBoxColumn.Name = "managerSURNAMEDataGridViewTextBoxColumn";
-            // 
-            // orderNAMEDataGridViewTextBoxColumn
-            // 
-            this.orderNAMEDataGridViewTextBoxColumn.DataPropertyName = "Order_NAME";
-            this.orderNAMEDataGridViewTextBoxColumn.HeaderText = "Order_NAME";
-            this.orderNAMEDataGridViewTextBoxColumn.Name = "orderNAMEDataGridViewTextBoxColumn";
-            // 
-            // cLIENTDTBindingSource
-            // 
-            this.cLIENTDTBindingSource.DataMember = "CLIENT_DT";
-       
-            // 
-            // dsLibrary1
-            // 
-         
-            // 
-            // clienT_DTTableAdapter1
-            // 
-          
             // 
             // textBoxName
             // 
@@ -147,7 +103,7 @@
             // 
             // dateTimePickerClient
             // 
-            this.dateTimePickerClient.Location = new System.Drawing.Point(411, 49);
+            this.dateTimePickerClient.Location = new System.Drawing.Point(411, 44);
             this.dateTimePickerClient.Name = "dateTimePickerClient";
             this.dateTimePickerClient.Size = new System.Drawing.Size(232, 22);
             this.dateTimePickerClient.TabIndex = 7;
@@ -174,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 54);
+            this.label3.Location = new System.Drawing.Point(322, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 17);
             this.label3.TabIndex = 10;
@@ -208,11 +164,55 @@
             this.buttonSearch.UseVisualStyleBackColor = true;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
+            // clientSearchBindingSource
+            // 
+            this.clientSearchBindingSource.DataSource = typeof(ClassLibrary.ClientSearch);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ClientName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ClientName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ClientSurname";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ClientSurname";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ManagerSurname";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ManagerSurname";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "OrderName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "OrderName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dateOFBirthDataGridViewTextBoxColumn
+            // 
+            this.dateOFBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOFBirth";
+            this.dateOFBirthDataGridViewTextBoxColumn.HeaderText = "DateOFBirth";
+            this.dateOFBirthDataGridViewTextBoxColumn.Name = "dateOFBirthDataGridViewTextBoxColumn";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(376, 49);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 14;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Finder2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(655, 439);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -228,8 +228,7 @@
             this.Name = "Finder2";
             this.Text = "Finder2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTDTBindingSource)).EndInit();
-        
+            ((System.ComponentModel.ISupportInitialize)(this.clientSearchBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -243,7 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clientBORNDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerSURNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNAMEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource cLIENTDTBindingSource;
    
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxSurname;
@@ -256,5 +254,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOFBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource clientSearchBindingSource;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
