@@ -36,8 +36,7 @@
             this.managerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLIENTDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLibrary1 = new ClassLibrary.DSLibrary();
-            this.clienT_DTTableAdapter1 = new ClassLibrary.DSLibraryTableAdapters.CLIENT_DTTableAdapter();
+   
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxManagerSurname = new System.Windows.Forms.TextBox();
@@ -51,7 +50,7 @@
             this.buttonSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTDTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).BeginInit();
+    
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -108,16 +107,15 @@
             // cLIENTDTBindingSource
             // 
             this.cLIENTDTBindingSource.DataMember = "CLIENT_DT";
-            this.cLIENTDTBindingSource.DataSource = this.dsLibrary1;
+       
             // 
             // dsLibrary1
             // 
-            this.dsLibrary1.DataSetName = "DSLibrary";
-            this.dsLibrary1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+         
             // 
             // clienT_DTTableAdapter1
             // 
-            this.clienT_DTTableAdapter1.ClearBeforeFill = true;
+          
             // 
             // textBoxName
             // 
@@ -231,7 +229,7 @@
             this.Text = "Finder2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTDTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).EndInit();
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -246,8 +244,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn managerSURNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource cLIENTDTBindingSource;
-        private ClassLibrary.DSLibrary dsLibrary1;
-        private ClassLibrary.DSLibraryTableAdapters.CLIENT_DTTableAdapter clienT_DTTableAdapter1;
+   
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.TextBox textBoxManagerSurname;

@@ -7,22 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.Entity;
 
 namespace WindFormsTravel
 {
     public partial class FormTrip : Form
     {
+        private ClassLibrary.DBTripToMyDreamEntities ctx;
         public FormTrip()
         {
             InitializeComponent();
-            ownersTableAdapter1.Fill(dsLibrary1.OWNERS);
-            companyTableAdapter1.Fill(dsLibrary1.COMPANY);
-            filialTableAdapter1.Fill(dsLibrary1.FILIAL);
-            managersTableAdapter1.Fill(dsLibrary1.MANAGERS);
-            clientsTableAdapter1.Fill(dsLibrary1.CLIENTS);
-            ordersTableAdapter1.Fill(dsLibrary1.ORDERS);
-            destinationTableAdapter1.Fill(dsLibrary1.DESTINATION);
+       
         }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            ctx = new ClassLibrary.DBTripToMyDreamEntities();
+            ctx.OWNERS.Load();
+            this.oWNERBindingSource.DataSource = ctx.OWNERS.Local.ToBindingList();
+            ctx.COMPANies.Load();
+            this.cOMPANYBindingSource.DataSource = ctx.COMPANies.Local.ToBindingList();
+            ctx.FILIALs.Load();
+            this.fILIALBindingSource.DataSource = ctx.FILIALs.Local.ToBindingList();
+            ctx.MANAGERS.Load();
+            this.mANAGERBindingSource.DataSource = ctx.MANAGERS.Local.ToBindingList();
+            ctx.ORDERS.Load();
+            this.oRDERBindingSource.DataSource = ctx.ORDERS.Local.ToBindingList();
+            ctx.CLIENTS.Load();
+            this.cLIENTBindingSource.DataSource = ctx.CLIENTS.Local.ToBindingList();
+            ctx.DESTINATIONs.Load();
+            this.dESTINATIONBindingSource.DataSource = ctx.DESTINATIONs.Local.ToBindingList();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            ctx.Dispose();
+        }
+
+
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -31,7 +54,7 @@ namespace WindFormsTravel
 
         private void buttonOwnersSave_Click(object sender, EventArgs e)
         {
-            ownersTableAdapter1.Update(dsLibrary1.OWNERS);
+            ctx.SaveChanges();
         }
 
         private void buttonOwnersDelete_Click(object sender, EventArgs e)
@@ -39,26 +62,27 @@ namespace WindFormsTravel
             
             try
             {
-                int id = (int)dataGridViewOWNER.CurrentRow.Cells["ownerIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> ow_count = queriesTableAdapter1.SQCountOwnerID_CompanyID(id);
-                if (ow_count == 0)
-                {
-                    oWNERSBindingSource.RemoveCurrent();
-                }
-                else
+                ClassLibrary.OWNER owner = (ClassLibrary.OWNER)dataGridViewOWNER.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.COMPANies where c.Company_OWNERS == owner.Owner_ID select c).Any();
+                if (v)
                 {
                     MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    oWNERBindingSource.RemoveCurrent();
+                }
             }
-            catch
+            catch(Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
         }
 
         private void buttonCompanySave_Click(object sender, EventArgs e)
         {
-            companyTableAdapter1.Update(dsLibrary1.COMPANY);
+            ctx.SaveChanges();
         }
 
         private void buttonCompanyDelete_Click(object sender, EventArgs e)
@@ -66,26 +90,27 @@ namespace WindFormsTravel
 
             try
             {
-                int id = (int)dataGridViewCOMPANY.CurrentRow.Cells["companyIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> comp_count = queriesTableAdapter1.SQCountCompany_IDFilial_ID(id);
-                if (comp_count == 0)
-                {
-                    cOMPANYBindingSource.RemoveCurrent();
-                }
-                else
+                ClassLibrary.COMPANY company = (ClassLibrary.COMPANY)dataGridViewCOMPANY.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.FILIALs where c.Filial_COMPANY == company.Company_ID select c).Any();
+                if (v)
                 {
                     MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    cOMPANYBindingSource.RemoveCurrent();
+                }
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
         }
 
         private void buttonFilialSave_Click(object sender, EventArgs e)
         {
-            filialTableAdapter1.Update(dsLibrary1.FILIAL);
+            ctx.SaveChanges();
         }
 
         private void fILIALBindingSource_CurrentChanged(object sender, EventArgs e)
@@ -96,112 +121,116 @@ namespace WindFormsTravel
         private void buttonFilialDelete_Click(object sender, EventArgs e)
         {
             try
-            {
-                int id = (int)dataGridViewFILIAL.CurrentRow.Cells["filialIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> f_count = queriesTableAdapter1.SQCountFilial_IDManagers_ID(id);
-                if (f_count == 0)
                 {
-                    fILIALBindingSource.RemoveCurrent();
+                    ClassLibrary.FILIAL filial = (ClassLibrary.FILIAL)dataGridViewFILIAL.CurrentRow.DataBoundItem;
+                    var v = (from c in ctx.MANAGERS where c.Manager_FILIAL == filial.Filial_ID select c).Any();
+                    if (v)
+                    {
+                        MessageBox.Show("You can't delete that!");
+                    }
+                    else
+                    {
+                        fILIALBindingSource.RemoveCurrent();
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("You can't delete that!");
-                }
-            }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
         }
 
         private void buttonManagersSave_Click(object sender, EventArgs e)
         {
-            managersTableAdapter1.Update(dsLibrary1.MANAGERS);
+            ctx.SaveChanges();
         }
 
         private void buttonManagersDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = (int)dataGridViewMANAGERS.CurrentRow.Cells["managerIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> man_count = queriesTableAdapter1.SQCountManager_IDOrder_ID(id);
-                if (man_count == 0)
-                {
-                    mANAGERSBindingSource.RemoveCurrent();
-                }
-                else
+                ClassLibrary.MANAGER manager = (ClassLibrary.MANAGER)dataGridViewMANAGERS.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.ORDERS where c.Order_MANAGER == manager.Manager_ID select c).Any();
+                if (v)
                 {
                     MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    mANAGERBindingSource.RemoveCurrent();
+                }
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
         }
 
         private void buttonClientsSave_Click(object sender, EventArgs e)
         {
-            clientsTableAdapter1.Update(dsLibrary1.CLIENTS);
+            ctx.SaveChanges();
         }
 
         private void buttonClientsDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = (int)dataGridViewCLIENTS.CurrentRow.Cells["clientIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> cl_count = queriesTableAdapter1.SQCountClientIDinOrders(id);
-                if (cl_count == 0)
-                {
-                    cLIENTSBindingSource.RemoveCurrent();
-                }
-                else
+                ClassLibrary.CLIENT client = (ClassLibrary.CLIENT)dataGridViewCLIENTS.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.ORDERS where c.Order_CLIENT == client.Client_ID select c).Any();
+                if (v)
                 {
                     MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    cLIENTBindingSource.RemoveCurrent();
+                }
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
-            
+
         }
 
         private void buttonOrdersSave_Click(object sender, EventArgs e)
         {
-            ordersTableAdapter1.Update(dsLibrary1.ORDERS);
+            ctx.SaveChanges();
         }
 
         private void buttonOrdersDelete_Click(object sender, EventArgs e)
         {
-            oRDERSBindingSource.RemoveCurrent();
+            oRDERBindingSource.RemoveCurrent();
         }
 
         private void buttonDestinatioSave_Click(object sender, EventArgs e)
         {
-            destinationTableAdapter1.Update(dsLibrary1.DESTINATION);
+            ctx.SaveChanges();
         }
 
         private void buttonDestinationDelete_Click(object sender, EventArgs e)
         {
             try
             {
-                int id = (int)dataGridViewDESTINATION.CurrentRow.Cells["destinationIDDataGridViewTextBoxColumn"].Value;
-                global::System.Nullable<int> d_count = queriesTableAdapter1.SQDestination_IDOrders_ID(id);
-                if (d_count == 0)
-                {
-                    dESTINATIONBindingSource.RemoveCurrent();
-                }
-                else
+                ClassLibrary.DESTINATION destination = (ClassLibrary.DESTINATION)dataGridViewDESTINATION.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.ORDERS where c.Order_DESTINATION == destination.Destination_ID select c).Any();
+                if (v)
                 {
                     MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    dESTINATIONBindingSource.RemoveCurrent();
+                }
             }
-            catch
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
+                throw;
             }
-            
+
         }
 
         private void buttonOrderSearch_Click(object sender, EventArgs e)

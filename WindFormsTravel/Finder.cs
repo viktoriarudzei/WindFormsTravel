@@ -15,7 +15,7 @@ namespace WindFormsTravel
         public Finder()
         {
             InitializeComponent();
-            ordeR_DTTableAdapter1.Fill(dsLibrary1.ORDER_DT, 0, 0, "", "", "", "");
+        
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -36,7 +36,7 @@ namespace WindFormsTravel
             int Price;
             if (!Int32.TryParse(textBoxPrice.Text, out Price))
                  Price = 0;
-            ordeR_DTTableAdapter1.Fill(dsLibrary1.ORDER_DT, Price, Duration, ClientName, ManagerName, Destination, OrderName);
+         
         }
 
         private void Finder_Load(object sender, EventArgs e)

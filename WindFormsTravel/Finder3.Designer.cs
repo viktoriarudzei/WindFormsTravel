@@ -31,8 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mANAGERDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLibrary1 = new ClassLibrary.DSLibrary();
-            this.manageR_DTTableAdapter1 = new ClassLibrary.DSLibraryTableAdapters.MANAGER_DTTableAdapter();
+     
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxRank = new System.Windows.Forms.TextBox();
@@ -48,7 +47,7 @@
             this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).BeginInit();
+      
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -74,16 +73,15 @@
             // mANAGERDTBindingSource
             // 
             this.mANAGERDTBindingSource.DataMember = "MANAGER_DT";
-            this.mANAGERDTBindingSource.DataSource = this.dsLibrary1;
+   
             // 
             // dsLibrary1
             // 
-            this.dsLibrary1.DataSetName = "DSLibrary";
-            this.dsLibrary1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          
             // 
             // manageR_DTTableAdapter1
             // 
-            this.manageR_DTTableAdapter1.ClearBeforeFill = true;
+      
             // 
             // button1
             // 
@@ -202,7 +200,7 @@
             this.Text = "Finder3";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mANAGERDTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).EndInit();
+         
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,8 +210,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource mANAGERDTBindingSource;
-        private ClassLibrary.DSLibrary dsLibrary1;
-        private ClassLibrary.DSLibraryTableAdapters.MANAGER_DTTableAdapter manageR_DTTableAdapter1;
+   
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxSurname;
         private System.Windows.Forms.TextBox textBoxRank;

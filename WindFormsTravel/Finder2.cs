@@ -15,7 +15,7 @@ namespace WindFormsTravel
         public Finder2()
         {
             InitializeComponent();
-            clienT_DTTableAdapter1.Fill(dsLibrary1.CLIENT_DT, "", "", "", "","");
+          
         }
 
         private void buttonSearch_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace WindFormsTravel
             string Surname = textBoxSurname.Text;
             string ManagerSyrname = textBoxManagerSurname.Text;
             string Born = dateTimePickerClient.Value.ToString("yyyy-dd-MM");
-            clienT_DTTableAdapter1.Fill(dsLibrary1.CLIENT_DT, Surname, Name, Born, ManagerSyrname, OrderName);
+         
         }
     }
 }

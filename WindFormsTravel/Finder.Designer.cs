@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.oRDERDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dsLibrary1 = new ClassLibrary.DSLibrary();
+          
             this.textBoxOrderName = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxDuration = new System.Windows.Forms.TextBox();
@@ -45,7 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.ordeR_DTTableAdapter1 = new ClassLibrary.DSLibraryTableAdapters.ORDER_DTTableAdapter();
+     
             this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDURATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,7 +54,7 @@
             this.managerNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERDTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).BeginInit();
+    
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -83,12 +83,11 @@
             // oRDERDTBindingSource
             // 
             this.oRDERDTBindingSource.DataMember = "ORDER_DT";
-            this.oRDERDTBindingSource.DataSource = this.dsLibrary1;
+      
             // 
             // dsLibrary1
             // 
-            this.dsLibrary1.DataSetName = "DSLibrary";
-            this.dsLibrary1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+        
             // 
             // textBoxOrderName
             // 
@@ -198,7 +197,7 @@
             // 
             // ordeR_DTTableAdapter1
             // 
-            this.ordeR_DTTableAdapter1.ClearBeforeFill = true;
+           
             // 
             // orderNAMEDataGridViewTextBoxColumn
             // 
@@ -260,7 +259,7 @@
             this.Load += new System.EventHandler(this.Finder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.oRDERDTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsLibrary1)).EndInit();
+        
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,8 +282,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button1;
-        private ClassLibrary.DSLibrary dsLibrary1;
-        private ClassLibrary.DSLibraryTableAdapters.ORDER_DTTableAdapter ordeR_DTTableAdapter1;
+    
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderPRICEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDURATIONDataGridViewTextBoxColumn;

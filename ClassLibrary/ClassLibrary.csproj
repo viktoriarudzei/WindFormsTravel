@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +50,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="DSLibrary.Designer.cs">
+    <Compile Include="CLIENT.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="COMPANY.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESTINATION.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FILIAL.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MANAGER.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTrip.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSLibrary.xsd</DependentUpon>
+      <DependentUpon>ModelTrip.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTrip.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTrip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTrip.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ORDER.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OWNER.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -56,21 +95,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DSLibrary.xsc">
-      <DependentUpon>DSLibrary.xsd</DependentUpon>
+    <EntityDeploy Include="ModelTrip.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTrip.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ModelTrip.edmx.diagram">
+      <DependentUpon>ModelTrip.edmx</DependentUpon>
     </None>
-    <None Include="DSLibrary.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSLibrary.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DSLibrary.xss">
-      <DependentUpon>DSLibrary.xsd</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelTrip.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTrip.Context.cs</LastGenOutput>
+      <DependentUpon>ModelTrip.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelTrip.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTrip.edmx</DependentUpon>
+      <LastGenOutput>ModelTrip.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

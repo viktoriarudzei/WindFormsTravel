@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DBTripToMyDreamModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTS">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Client_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Client_SURNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Client_BORN" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="COMPANY">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company_LOCATION" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Company_OWNERS" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DESTINATION">
+          <Key>
+            <PropertyRef Name="Destination_ID" />
+          </Key>
+          <Property Name="Destination_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Destination_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FILIAL">
+          <Key>
+            <PropertyRef Name="Filial_ID" />
+          </Key>
+          <Property Name="Filial_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Filial_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Filial_LOCATION" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Filial_COMPANY" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MANAGERS">
+          <Key>
+            <PropertyRef Name="Manager_ID" />
+          </Key>
+          <Property Name="Manager_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Manager_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manager_SURNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manager_RANK" Type="int" Nullable="false" />
+          <Property Name="Manager_FILIAL" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ORDERS">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Order_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Order_MANAGER" Type="int" Nullable="false" />
+          <Property Name="Order_DESTINATION" Type="int" Nullable="false" />
+          <Property Name="Order_DURATION" Type="int" Nullable="false" />
+          <Property Name="Order_PRICE" Type="int" Nullable="false" />
+          <Property Name="Order_CLIENT" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OWNERS">
+          <Key>
+            <PropertyRef Name="Owner_ID" />
+          </Key>
+          <Property Name="Owner_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Owner_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Owner_SURNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_COMPANY_OWNERS">
+          <End Role="OWNERS" Type="Self.OWNERS" Multiplicity="1" />
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OWNERS">
+              <PropertyRef Name="Owner_ID" />
+            </Principal>
+            <Dependent Role="COMPANY">
+              <PropertyRef Name="Company_OWNERS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FILIAL_COMPANY">
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+          <End Role="FILIAL" Type="Self.FILIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="Company_ID" />
+            </Principal>
+            <Dependent Role="FILIAL">
+              <PropertyRef Name="Filial_COMPANY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANAGERS_FILIAL">
+          <End Role="FILIAL" Type="Self.FILIAL" Multiplicity="1" />
+          <End Role="MANAGERS" Type="Self.MANAGERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILIAL">
+              <PropertyRef Name="Filial_ID" />
+            </Principal>
+            <Dependent Role="MANAGERS">
+              <PropertyRef Name="Manager_FILIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERS_CLIENTS">
+          <End Role="CLIENTS" Type="Self.CLIENTS" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTS">
+              <PropertyRef Name="Client_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERS_DESTINATION">
+          <End Role="DESTINATION" Type="Self.DESTINATION" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DESTINATION">
+              <PropertyRef Name="Destination_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_DESTINATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERS_MANAGERS">
+          <End Role="MANAGERS" Type="Self.MANAGERS" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDERS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MANAGERS">
+              <PropertyRef Name="Manager_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_MANAGER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBTripToMyDreamModelStoreContainer">
+          <EntitySet Name="CLIENTS" EntityType="Self.CLIENTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="COMPANY" EntityType="Self.COMPANY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DESTINATION" EntityType="Self.DESTINATION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FILIAL" EntityType="Self.FILIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MANAGERS" EntityType="Self.MANAGERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OWNERS" EntityType="Self.OWNERS" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_COMPANY_OWNERS" Association="Self.FK_COMPANY_OWNERS">
+            <End Role="OWNERS" EntitySet="OWNERS" />
+            <End Role="COMPANY" EntitySet="COMPANY" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FILIAL_COMPANY" Association="Self.FK_FILIAL_COMPANY">
+            <End Role="COMPANY" EntitySet="COMPANY" />
+            <End Role="FILIAL" EntitySet="FILIAL" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANAGERS_FILIAL" Association="Self.FK_MANAGERS_FILIAL">
+            <End Role="FILIAL" EntitySet="FILIAL" />
+            <End Role="MANAGERS" EntitySet="MANAGERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERS_CLIENTS" Association="Self.FK_ORDERS_CLIENTS">
+            <End Role="CLIENTS" EntitySet="CLIENTS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERS_DESTINATION" Association="Self.FK_ORDERS_DESTINATION">
+            <End Role="DESTINATION" EntitySet="DESTINATION" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERS_MANAGERS" Association="Self.FK_ORDERS_MANAGERS">
+            <End Role="MANAGERS" EntitySet="MANAGERS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DBTripToMyDreamModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="Client_ID" />
+          </Key>
+          <Property Name="Client_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Client_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Client_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Client_BORN" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="ORDERS" Relationship="Self.FK_ORDERS_CLIENTS" FromRole="CLIENTS" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="COMPANY">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Company_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Company_OWNERS" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="OWNER" Relationship="Self.FK_COMPANY_OWNERS" FromRole="COMPANY" ToRole="OWNERS" />
+          <NavigationProperty Name="FILIALs" Relationship="Self.FK_FILIAL_COMPANY" FromRole="COMPANY" ToRole="FILIAL" />
+        </EntityType>
+        <EntityType Name="DESTINATION">
+          <Key>
+            <PropertyRef Name="Destination_ID" />
+          </Key>
+          <Property Name="Destination_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Destination_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ORDERS" Relationship="Self.FK_ORDERS_DESTINATION" FromRole="DESTINATION" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="FILIAL">
+          <Key>
+            <PropertyRef Name="Filial_ID" />
+          </Key>
+          <Property Name="Filial_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Filial_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Filial_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Filial_COMPANY" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="COMPANY" Relationship="Self.FK_FILIAL_COMPANY" FromRole="FILIAL" ToRole="COMPANY" />
+          <NavigationProperty Name="MANAGERS" Relationship="Self.FK_MANAGERS_FILIAL" FromRole="FILIAL" ToRole="MANAGERS" />
+        </EntityType>
+        <EntityType Name="MANAGER">
+          <Key>
+            <PropertyRef Name="Manager_ID" />
+          </Key>
+          <Property Name="Manager_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Manager_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manager_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manager_RANK" Type="Int32" Nullable="false" />
+          <Property Name="Manager_FILIAL" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FILIAL" Relationship="Self.FK_MANAGERS_FILIAL" FromRole="MANAGERS" ToRole="FILIAL" />
+          <NavigationProperty Name="ORDERS" Relationship="Self.FK_ORDERS_MANAGERS" FromRole="MANAGERS" ToRole="ORDERS" />
+        </EntityType>
+        <EntityType Name="ORDER">
+          <Key>
+            <PropertyRef Name="Order_ID" />
+          </Key>
+          <Property Name="Order_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Order_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Order_MANAGER" Type="Int32" Nullable="false" />
+          <Property Name="Order_DESTINATION" Type="Int32" Nullable="false" />
+          <Property Name="Order_DURATION" Type="Int32" Nullable="false" />
+          <Property Name="Order_PRICE" Type="Int32" Nullable="false" />
+          <Property Name="Order_CLIENT" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CLIENT" Relationship="Self.FK_ORDERS_CLIENTS" FromRole="ORDERS" ToRole="CLIENTS" />
+          <NavigationProperty Name="DESTINATION" Relationship="Self.FK_ORDERS_DESTINATION" FromRole="ORDERS" ToRole="DESTINATION" />
+          <NavigationProperty Name="MANAGER" Relationship="Self.FK_ORDERS_MANAGERS" FromRole="ORDERS" ToRole="MANAGERS" />
+        </EntityType>
+        <EntityType Name="OWNER">
+          <Key>
+            <PropertyRef Name="Owner_ID" />
+          </Key>
+          <Property Name="Owner_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Owner_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Owner_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="COMPANies" Relationship="Self.FK_COMPANY_OWNERS" FromRole="OWNERS" ToRole="COMPANY" />
+        </EntityType>
+        <Association Name="FK_ORDERS_CLIENTS">
+          <End Role="CLIENTS" Type="Self.CLIENT" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CLIENTS">
+              <PropertyRef Name="Client_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_CLIENT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_COMPANY_OWNERS">
+          <End Role="OWNERS" Type="Self.OWNER" Multiplicity="1" />
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OWNERS">
+              <PropertyRef Name="Owner_ID" />
+            </Principal>
+            <Dependent Role="COMPANY">
+              <PropertyRef Name="Company_OWNERS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FILIAL_COMPANY">
+          <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="1" />
+          <End Role="FILIAL" Type="Self.FILIAL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="COMPANY">
+              <PropertyRef Name="Company_ID" />
+            </Principal>
+            <Dependent Role="FILIAL">
+              <PropertyRef Name="Filial_COMPANY" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERS_DESTINATION">
+          <End Role="DESTINATION" Type="Self.DESTINATION" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DESTINATION">
+              <PropertyRef Name="Destination_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_DESTINATION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MANAGERS_FILIAL">
+          <End Role="FILIAL" Type="Self.FILIAL" Multiplicity="1" />
+          <End Role="MANAGERS" Type="Self.MANAGER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FILIAL">
+              <PropertyRef Name="Filial_ID" />
+            </Principal>
+            <Dependent Role="MANAGERS">
+              <PropertyRef Name="Manager_FILIAL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ORDERS_MANAGERS">
+          <End Role="MANAGERS" Type="Self.MANAGER" Multiplicity="1" />
+          <End Role="ORDERS" Type="Self.ORDER" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MANAGERS">
+              <PropertyRef Name="Manager_ID" />
+            </Principal>
+            <Dependent Role="ORDERS">
+              <PropertyRef Name="Order_MANAGER" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DBTripToMyDreamEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTS" EntityType="Self.CLIENT" />
+          <EntitySet Name="COMPANies" EntityType="Self.COMPANY" />
+          <EntitySet Name="DESTINATIONs" EntityType="Self.DESTINATION" />
+          <EntitySet Name="FILIALs" EntityType="Self.FILIAL" />
+          <EntitySet Name="MANAGERS" EntityType="Self.MANAGER" />
+          <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
+          <EntitySet Name="OWNERS" EntityType="Self.OWNER" />
+          <AssociationSet Name="FK_ORDERS_CLIENTS" Association="Self.FK_ORDERS_CLIENTS">
+            <End Role="CLIENTS" EntitySet="CLIENTS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_COMPANY_OWNERS" Association="Self.FK_COMPANY_OWNERS">
+            <End Role="OWNERS" EntitySet="OWNERS" />
+            <End Role="COMPANY" EntitySet="COMPANies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FILIAL_COMPANY" Association="Self.FK_FILIAL_COMPANY">
+            <End Role="COMPANY" EntitySet="COMPANies" />
+            <End Role="FILIAL" EntitySet="FILIALs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERS_DESTINATION" Association="Self.FK_ORDERS_DESTINATION">
+            <End Role="DESTINATION" EntitySet="DESTINATIONs" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MANAGERS_FILIAL" Association="Self.FK_MANAGERS_FILIAL">
+            <End Role="FILIAL" EntitySet="FILIALs" />
+            <End Role="MANAGERS" EntitySet="MANAGERS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ORDERS_MANAGERS" Association="Self.FK_ORDERS_MANAGERS">
+            <End Role="MANAGERS" EntitySet="MANAGERS" />
+            <End Role="ORDERS" EntitySet="ORDERS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DBTripToMyDreamModelStoreContainer" CdmEntityContainer="DBTripToMyDreamEntities">
+          <EntitySetMapping Name="CLIENTS">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.CLIENT">
+              <MappingFragment StoreEntitySet="CLIENTS">
+                <ScalarProperty Name="Client_ID" ColumnName="Client_ID" />
+                <ScalarProperty Name="Client_NAME" ColumnName="Client_NAME" />
+                <ScalarProperty Name="Client_SURNAME" ColumnName="Client_SURNAME" />
+                <ScalarProperty Name="Client_BORN" ColumnName="Client_BORN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPANies">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.COMPANY">
+              <MappingFragment StoreEntitySet="COMPANY">
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Company_NAME" ColumnName="Company_NAME" />
+                <ScalarProperty Name="Company_LOCATION" ColumnName="Company_LOCATION" />
+                <ScalarProperty Name="Company_OWNERS" ColumnName="Company_OWNERS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DESTINATIONs">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.DESTINATION">
+              <MappingFragment StoreEntitySet="DESTINATION">
+                <ScalarProperty Name="Destination_ID" ColumnName="Destination_ID" />
+                <ScalarProperty Name="Destination_NAME" ColumnName="Destination_NAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILIALs">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.FILIAL">
+              <MappingFragment StoreEntitySet="FILIAL">
+                <ScalarProperty Name="Filial_ID" ColumnName="Filial_ID" />
+                <ScalarProperty Name="Filial_NAME" ColumnName="Filial_NAME" />
+                <ScalarProperty Name="Filial_LOCATION" ColumnName="Filial_LOCATION" />
+                <ScalarProperty Name="Filial_COMPANY" ColumnName="Filial_COMPANY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MANAGERS">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.MANAGER">
+              <MappingFragment StoreEntitySet="MANAGERS">
+                <ScalarProperty Name="Manager_ID" ColumnName="Manager_ID" />
+                <ScalarProperty Name="Manager_NAME" ColumnName="Manager_NAME" />
+                <ScalarProperty Name="Manager_SURNAME" ColumnName="Manager_SURNAME" />
+                <ScalarProperty Name="Manager_RANK" ColumnName="Manager_RANK" />
+                <ScalarProperty Name="Manager_FILIAL" ColumnName="Manager_FILIAL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ORDERS">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.ORDER">
+              <MappingFragment StoreEntitySet="ORDERS">
+                <ScalarProperty Name="Order_ID" ColumnName="Order_ID" />
+                <ScalarProperty Name="Order_NAME" ColumnName="Order_NAME" />
+                <ScalarProperty Name="Order_MANAGER" ColumnName="Order_MANAGER" />
+                <ScalarProperty Name="Order_DESTINATION" ColumnName="Order_DESTINATION" />
+                <ScalarProperty Name="Order_DURATION" ColumnName="Order_DURATION" />
+                <ScalarProperty Name="Order_PRICE" ColumnName="Order_PRICE" />
+                <ScalarProperty Name="Order_CLIENT" ColumnName="Order_CLIENT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OWNERS">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.OWNER">
+              <MappingFragment StoreEntitySet="OWNERS">
+                <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
+                <ScalarProperty Name="Owner_NAME" ColumnName="Owner_NAME" />
+                <ScalarProperty Name="Owner_SURNAME" ColumnName="Owner_SURNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
