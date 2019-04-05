@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mANAGERDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-     
             this.button1 = new System.Windows.Forms.Button();
             this.textBoxSurname = new System.Windows.Forms.TextBox();
             this.textBoxRank = new System.Windows.Forms.TextBox();
@@ -41,13 +39,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.managerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.managerRANKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filialNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.managerSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANAGERDTBindingSource)).BeginInit();
-      
+            ((System.ComponentModel.ISupportInitialize)(this.managerSearchBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -59,29 +57,16 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.managerSURNAMEDataGridViewTextBoxColumn,
-            this.managerRANKDataGridViewTextBoxColumn,
-            this.filialNAMEDataGridViewTextBoxColumn,
-            this.orderNAMEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.mANAGERDTBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 242);
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView1.DataSource = this.managerSearchBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 227);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(651, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(651, 211);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // mANAGERDTBindingSource
-            // 
-            this.mANAGERDTBindingSource.DataMember = "MANAGER_DT";
-   
-            // 
-            // dsLibrary1
-            // 
-          
-            // 
-            // manageR_DTTableAdapter1
-            // 
-      
             // 
             // button1
             // 
@@ -157,29 +142,33 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "NAME ORDER";
             // 
-            // managerSURNAMEDataGridViewTextBoxColumn
+            // managerSearchBindingSource
             // 
-            this.managerSURNAMEDataGridViewTextBoxColumn.DataPropertyName = "Manager_SURNAME";
-            this.managerSURNAMEDataGridViewTextBoxColumn.HeaderText = "SURNAME";
-            this.managerSURNAMEDataGridViewTextBoxColumn.Name = "managerSURNAMEDataGridViewTextBoxColumn";
+            this.managerSearchBindingSource.DataSource = typeof(ClassLibrary.ManagerSearch);
             // 
-            // managerRANKDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.managerRANKDataGridViewTextBoxColumn.DataPropertyName = "Manager_RANK";
-            this.managerRANKDataGridViewTextBoxColumn.HeaderText = "RANK";
-            this.managerRANKDataGridViewTextBoxColumn.Name = "managerRANKDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "FilialName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "FilialName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // filialNAMEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.filialNAMEDataGridViewTextBoxColumn.DataPropertyName = "Filial_NAME";
-            this.filialNAMEDataGridViewTextBoxColumn.HeaderText = "NAME FILIAL";
-            this.filialNAMEDataGridViewTextBoxColumn.Name = "filialNAMEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "ManagerSurname";
+            this.dataGridViewTextBoxColumn2.HeaderText = "ManagerSurname";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // orderNAMEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.orderNAMEDataGridViewTextBoxColumn.DataPropertyName = "Order_NAME";
-            this.orderNAMEDataGridViewTextBoxColumn.HeaderText = "NAME ORDER";
-            this.orderNAMEDataGridViewTextBoxColumn.Name = "orderNAMEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OrderName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "OrderName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ManagerRank";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ManagerRank";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // Finder3
             // 
@@ -199,8 +188,7 @@
             this.Name = "Finder3";
             this.Text = "Finder3";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANAGERDTBindingSource)).EndInit();
-         
+            ((System.ComponentModel.ISupportInitialize)(this.managerSearchBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +197,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource mANAGERDTBindingSource;
    
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxSurname;
@@ -224,5 +211,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn managerRANKDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filialNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn managerNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.BindingSource managerSearchBindingSource;
     }
 }

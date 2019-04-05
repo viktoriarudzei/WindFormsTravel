@@ -65,6 +65,7 @@
     <Compile Include="MANAGER.cs">
       <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>
+    <Compile Include="ManagerSearch.cs" />
     <Compile Include="ModelTrip.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
