@@ -15,15 +15,8 @@ namespace WindFormsTravel
         public Finder()
         {
             InitializeComponent();
-        
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void fillBindingSourse()
         {
             string ClientName = textBoxClientName.Text;
             string Destination = textBoxDestination.Text;
@@ -35,13 +28,47 @@ namespace WindFormsTravel
 
             int Price;
             if (!Int32.TryParse(textBoxPrice.Text, out Price))
-                 Price = 0;
-         
-        }
+                Price = 0;
 
-        private void Finder_Load(object sender, EventArgs e)
+
+            var ctx = new ClassLibrary.DBTripToMyDreamEntities();
+            var query = from orders in ctx.ORDERS
+                        join managers in ctx.MANAGERS on orders.Order_MANAGER equals managers.Manager_ID
+                        join clients in ctx.CLIENTS on orders.Order_CLIENT equals clients.Client_ID
+                        join destination in ctx.DESTINATIONs on orders.Order_DESTINATION equals destination.Destination_ID
+
+                        select new
+                        {
+                            ClName = clients.Client_NAME,
+                            Dest = destination.Destination_NAME,
+                            Dur = orders.Order_DURATION,
+                            MaName = managers.Manager_NAME,
+                            OrName = orders.Order_NAME,
+                            Pr = orders.Order_PRICE
+                        };
+
+
+            query = query.Where(n => (n.ClName == ClientName || ClientName == "") && (n.Dest == Destination || Destination == "") && (n.Dur == Duration || Duration == 0) && (n.MaName == ManagerName || ManagerName == "") && (n.Pr == Price || Price == 0));
+
+            orderSearchBindingSource.Clear();
+            foreach (var item in query)
+            {
+                orderSearchBindingSource.Add(new ClassLibrary.OrderSearch(item.OrName,item.Pr, item.Dur,item.Dest,item.ClName,item.MaName));
+            }
+        }
+        protected override void OnLoad(EventArgs e)
         {
-
+            base.OnLoad(e);
+            fillBindingSourse();
         }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fillBindingSourse();
+        }
+
+    
+       
     }
 }

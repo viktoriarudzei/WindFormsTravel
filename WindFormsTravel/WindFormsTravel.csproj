@@ -111,6 +111,7 @@
     <None Include="Properties\DataSources\ClassLibrary.MANAGER.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.ManagerSearch.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.ORDER.datasource" />
+    <None Include="Properties\DataSources\ClassLibrary.OrderSearch.datasource" />
     <None Include="Properties\DataSources\ClassLibrary.OWNER.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

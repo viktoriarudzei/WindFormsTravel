@@ -85,6 +85,7 @@
     <Compile Include="ORDER.cs">
       <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderSearch.cs" />
     <Compile Include="OWNER.cs">
       <DependentUpon>ModelTrip.tt</DependentUpon>
     </Compile>

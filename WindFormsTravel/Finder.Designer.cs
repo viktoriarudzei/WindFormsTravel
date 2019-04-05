@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.oRDERDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-          
             this.textBoxOrderName = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.textBoxDuration = new System.Windows.Forms.TextBox();
@@ -45,16 +43,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-     
-            this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderDURATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinationNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.managerNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderSearchBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderDestinationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDERDTBindingSource)).BeginInit();
-    
+            ((System.ComponentModel.ISupportInitialize)(this.orderSearchBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -66,28 +63,19 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.orderNAMEDataGridViewTextBoxColumn,
-            this.orderPRICEDataGridViewTextBoxColumn,
-            this.orderDURATIONDataGridViewTextBoxColumn,
-            this.destinationNAMEDataGridViewTextBoxColumn,
-            this.clientNAMEDataGridViewTextBoxColumn,
-            this.managerNAMEDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.oRDERDTBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.orderDestinationDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.dataGridView1.DataSource = this.orderSearchBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 243);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(651, 196);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // oRDERDTBindingSource
-            // 
-            this.oRDERDTBindingSource.DataMember = "ORDER_DT";
-      
-            // 
-            // dsLibrary1
-            // 
-        
+         
             // 
             // textBoxOrderName
             // 
@@ -195,45 +183,45 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ordeR_DTTableAdapter1
+            // orderSearchBindingSource
             // 
-           
+            this.orderSearchBindingSource.DataSource = typeof(ClassLibrary.OrderSearch);
             // 
-            // orderNAMEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.orderNAMEDataGridViewTextBoxColumn.DataPropertyName = "Order_NAME";
-            this.orderNAMEDataGridViewTextBoxColumn.HeaderText = "NAME ORDER";
-            this.orderNAMEDataGridViewTextBoxColumn.Name = "orderNAMEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "OrderName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "OrderName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // orderPRICEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.orderPRICEDataGridViewTextBoxColumn.DataPropertyName = "Order_PRICE";
-            this.orderPRICEDataGridViewTextBoxColumn.HeaderText = "PRICE";
-            this.orderPRICEDataGridViewTextBoxColumn.Name = "orderPRICEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "OrderPrice";
+            this.dataGridViewTextBoxColumn2.HeaderText = "OrderPrice";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // orderDURATIONDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.orderDURATIONDataGridViewTextBoxColumn.DataPropertyName = "Order_DURATION";
-            this.orderDURATIONDataGridViewTextBoxColumn.HeaderText = "DURATION";
-            this.orderDURATIONDataGridViewTextBoxColumn.Name = "orderDURATIONDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "OrderDuration";
+            this.dataGridViewTextBoxColumn3.HeaderText = "OrderDuration";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // destinationNAMEDataGridViewTextBoxColumn
+            // orderDestinationDataGridViewTextBoxColumn
             // 
-            this.destinationNAMEDataGridViewTextBoxColumn.DataPropertyName = "Destination_NAME";
-            this.destinationNAMEDataGridViewTextBoxColumn.HeaderText = "DESTINATION";
-            this.destinationNAMEDataGridViewTextBoxColumn.Name = "destinationNAMEDataGridViewTextBoxColumn";
+            this.orderDestinationDataGridViewTextBoxColumn.DataPropertyName = "OrderDestination";
+            this.orderDestinationDataGridViewTextBoxColumn.HeaderText = "OrderDestination";
+            this.orderDestinationDataGridViewTextBoxColumn.Name = "orderDestinationDataGridViewTextBoxColumn";
             // 
-            // clientNAMEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.clientNAMEDataGridViewTextBoxColumn.DataPropertyName = "Client_NAME";
-            this.clientNAMEDataGridViewTextBoxColumn.HeaderText = "NAME CLIENT";
-            this.clientNAMEDataGridViewTextBoxColumn.Name = "clientNAMEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ClientName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "ClientName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // managerNAMEDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.managerNAMEDataGridViewTextBoxColumn.DataPropertyName = "Manager_NAME";
-            this.managerNAMEDataGridViewTextBoxColumn.HeaderText = "NAME MANAGER";
-            this.managerNAMEDataGridViewTextBoxColumn.Name = "managerNAMEDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ManagerName";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ManagerName";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // Finder
             // 
@@ -256,10 +244,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Finder";
             this.Text = "Finder";
-            this.Load += new System.EventHandler(this.Finder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDERDTBindingSource)).EndInit();
         
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderSearchBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,7 +255,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource oRDERDTBindingSource;
         private System.Windows.Forms.TextBox textBoxOrderName;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.TextBox textBoxDuration;
@@ -289,5 +275,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerNAMEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderDestinationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource orderSearchBindingSource;
     }
 }
