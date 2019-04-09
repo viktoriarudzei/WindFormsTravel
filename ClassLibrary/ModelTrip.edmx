@@ -69,6 +69,16 @@
           <Property Name="Owner_NAME" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Owner_SURNAME" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <Association Name="FK_COMPANY_OWNERS">
           <End Role="OWNERS" Type="Self.OWNERS" Multiplicity="1" />
           <End Role="COMPANY" Type="Self.COMPANY" Multiplicity="*" />
@@ -149,6 +159,7 @@
           <EntitySet Name="MANAGERS" EntityType="Self.MANAGERS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDERS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OWNERS" EntityType="Self.OWNERS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_COMPANY_OWNERS" Association="Self.FK_COMPANY_OWNERS">
             <End Role="OWNERS" EntitySet="OWNERS" />
             <End Role="COMPANY" EntitySet="COMPANY" />
@@ -255,6 +266,16 @@
           <Property Name="Owner_SURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="COMPANies" Relationship="Self.FK_COMPANY_OWNERS" FromRole="OWNERS" ToRole="COMPANY" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <Association Name="FK_ORDERS_CLIENTS">
           <End Role="CLIENTS" Type="Self.CLIENT" Multiplicity="1" />
           <End Role="ORDERS" Type="Self.ORDER" Multiplicity="*" />
@@ -335,6 +356,7 @@
           <EntitySet Name="MANAGERS" EntityType="Self.MANAGER" />
           <EntitySet Name="ORDERS" EntityType="Self.ORDER" />
           <EntitySet Name="OWNERS" EntityType="Self.OWNER" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <AssociationSet Name="FK_ORDERS_CLIENTS" Association="Self.FK_ORDERS_CLIENTS">
             <End Role="CLIENTS" EntitySet="CLIENTS" />
             <End Role="ORDERS" EntitySet="ORDERS" />
@@ -434,6 +456,17 @@
                 <ScalarProperty Name="Owner_ID" ColumnName="Owner_ID" />
                 <ScalarProperty Name="Owner_NAME" ColumnName="Owner_NAME" />
                 <ScalarProperty Name="Owner_SURNAME" ColumnName="Owner_SURNAME" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DBTripToMyDreamModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

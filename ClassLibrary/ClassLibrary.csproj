@@ -95,6 +95,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ModelTrip.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -112,19 +115,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="ModelTrip.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ModelTrip.Context.cs</LastGenOutput>
       <DependentUpon>ModelTrip.edmx</DependentUpon>
+      <LastGenOutput>ModelTrip.Context.cs</LastGenOutput>
     </Content>
     <Content Include="ModelTrip.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelTrip.edmx</DependentUpon>
       <LastGenOutput>ModelTrip.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

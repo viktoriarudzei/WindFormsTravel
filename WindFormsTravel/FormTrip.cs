@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Entity;
+using ClassLibrary;
 
 namespace WindFormsTravel
 {
@@ -17,7 +18,7 @@ namespace WindFormsTravel
         public FormTrip()
         {
             InitializeComponent();
-       
+
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -47,10 +48,6 @@ namespace WindFormsTravel
 
 
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void buttonOwnersSave_Click(object sender, EventArgs e)
         {
@@ -59,7 +56,7 @@ namespace WindFormsTravel
 
         private void buttonOwnersDelete_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 ClassLibrary.OWNER owner = (ClassLibrary.OWNER)dataGridViewOWNER.CurrentRow.DataBoundItem;
@@ -73,7 +70,7 @@ namespace WindFormsTravel
                     oWNERBindingSource.RemoveCurrent();
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("Error!");
                 throw;
@@ -113,26 +110,23 @@ namespace WindFormsTravel
             ctx.SaveChanges();
         }
 
-        private void fILIALBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void buttonFilialDelete_Click(object sender, EventArgs e)
         {
             try
+            {
+                ClassLibrary.FILIAL filial = (ClassLibrary.FILIAL)dataGridViewFILIAL.CurrentRow.DataBoundItem;
+                var v = (from c in ctx.MANAGERS where c.Manager_FILIAL == filial.Filial_ID select c).Any();
+                if (v)
                 {
-                    ClassLibrary.FILIAL filial = (ClassLibrary.FILIAL)dataGridViewFILIAL.CurrentRow.DataBoundItem;
-                    var v = (from c in ctx.MANAGERS where c.Manager_FILIAL == filial.Filial_ID select c).Any();
-                    if (v)
-                    {
-                        MessageBox.Show("You can't delete that!");
-                    }
-                    else
-                    {
-                        fILIALBindingSource.RemoveCurrent();
-                    }
+                    MessageBox.Show("You can't delete that!");
                 }
+                else
+                {
+                    fILIALBindingSource.RemoveCurrent();
+                }
+            }
             catch (Exception)
             {
                 MessageBox.Show("Error!");
@@ -235,26 +229,50 @@ namespace WindFormsTravel
 
         private void buttonOrderSearch_Click(object sender, EventArgs e)
         {
-            Finder finder = new Finder();
-            finder.ShowDialog();
-            finder.Close();
+            var che = ctx.ChangeTracker.Entries<ORDER>().Where(a => a.State != System.Data.Entity.EntityState.Unchanged).ToList();
+            if (che.Count != 0)
+            {
+                MessageBox.Show("Caution there are unsaved data ");
+            }
+            else
+            {
+                Finder finder = new Finder();
+                finder.ShowDialog();
+                finder.Close();
+            }
         }
 
         private void buttonClientsSearch_Click(object sender, EventArgs e)
         {
-            Finder2 finder = new Finder2();
-            finder.ShowDialog();
-            finder.Close();
+            var che = ctx.ChangeTracker.Entries<CLIENT>().Where(a => a.State != System.Data.Entity.EntityState.Unchanged).ToList();
+            if (che.Count != 0)
+            {
+                MessageBox.Show("Caution there are unsaved data ");
+            }
+            else
+            {
+                Finder2 finder = new Finder2();
+                finder.ShowDialog();
+                finder.Close();
+            }
         }
 
         private void buttonManagS_Click(object sender, EventArgs e)
         {
-            Finder3 finder = new Finder3();
-            finder.ShowDialog();
-            finder.Close();
+            var che = ctx.ChangeTracker.Entries<MANAGER>().Where(a => a.State != System.Data.Entity.EntityState.Unchanged).ToList();
+            if (che.Count != 0)
+            {
+                MessageBox.Show("Caution there are unsaved data ");
+            }
+            else
+            {
+                Finder3 finder = new Finder3();
+                finder.ShowDialog();
+                finder.Close();
+            }
         }
 
-              
+
 
         private void dataGridViewMANAGERS_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -298,6 +316,26 @@ namespace WindFormsTravel
                     tb.KeyPress += new KeyPressEventHandler(dataGridViewORDERS_KeyPress);
                 }
             }
+        }
+
+        private void dataGridViewMANAGERS_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewORDERS_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewFILIAL_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewCOMPANY_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

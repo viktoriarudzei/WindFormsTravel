@@ -32,5 +32,6 @@ namespace ClassLibrary
         public virtual DbSet<MANAGER> MANAGERS { get; set; }
         public virtual DbSet<ORDER> ORDERS { get; set; }
         public virtual DbSet<OWNER> OWNERS { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
     }
 }

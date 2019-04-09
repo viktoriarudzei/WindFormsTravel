@@ -34,68 +34,68 @@
             this.buttonOwnersDelete = new System.Windows.Forms.Button();
             this.buttonOwnersSave = new System.Windows.Forms.Button();
             this.dataGridViewOWNER = new System.Windows.Forms.DataGridView();
+            this.ownerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownerNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ownerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cOMPANiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oWNERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCompany = new System.Windows.Forms.TabPage();
             this.buttonCompanyDelete = new System.Windows.Forms.Button();
             this.buttonCompanySave = new System.Windows.Forms.Button();
             this.dataGridViewCOMPANY = new System.Windows.Forms.DataGridView();
+            this.cOMPANYBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabFilial = new System.Windows.Forms.TabPage();
             this.buttonFilialDelete = new System.Windows.Forms.Button();
             this.buttonFilialSave = new System.Windows.Forms.Button();
             this.dataGridViewFILIAL = new System.Windows.Forms.DataGridView();
+            this.fILIALBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabManagers = new System.Windows.Forms.TabPage();
             this.buttonManagS = new System.Windows.Forms.Button();
             this.buttonManagersDelete = new System.Windows.Forms.Button();
             this.buttonManagersSave = new System.Windows.Forms.Button();
             this.dataGridViewMANAGERS = new System.Windows.Forms.DataGridView();
+            this.mANAGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabClients = new System.Windows.Forms.TabPage();
             this.buttonClientsSearch = new System.Windows.Forms.Button();
             this.buttonClientsDelete = new System.Windows.Forms.Button();
             this.buttonClientsSave = new System.Windows.Forms.Button();
             this.dataGridViewCLIENTS = new System.Windows.Forms.DataGridView();
+            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabOrders = new System.Windows.Forms.TabPage();
             this.buttonOrderSearch = new System.Windows.Forms.Button();
             this.buttonOrdersDelete = new System.Windows.Forms.Button();
             this.buttonOrdersSave = new System.Windows.Forms.Button();
             this.dataGridViewORDERS = new System.Windows.Forms.DataGridView();
+            this.dESTINATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.oRDERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabDestination = new System.Windows.Forms.TabPage();
             this.buttonDestinationDelete = new System.Windows.Forms.Button();
             this.buttonDestinatioSave = new System.Windows.Forms.Button();
             this.dataGridViewDESTINATION = new System.Windows.Forms.DataGridView();
             this.destinationIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationNAMEDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ownerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOMPANiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oWNERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cOMPANYBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fILIALBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mANAGERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cLIENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.oRDERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dESTINATIONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.companyNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyLOCATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyOWNERSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OWNER = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.oWNERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fILIALsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OWNERS = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.filialNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filialIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filialLOCATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filialCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.COMPANY = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANAGERSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.managerNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.managerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.managerSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.managerRANKDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.managerFILIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fILIALDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRDERSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Filial = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.clientNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientSURNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,41 +104,41 @@
             this.orderNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderMANAGERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orderPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Manager = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Destination = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.orderDESTINATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDURATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderPRICEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderCLIENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLIENTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dESTINATIONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mANAGERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Manager = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Destination = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.destinationNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.destinationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.oRDERSDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabOwners.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOWNER)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oWNERBindingSource)).BeginInit();
             this.tabCompany.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCOMPANY)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).BeginInit();
             this.tabFilial.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFILIAL)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fILIALBindingSource)).BeginInit();
             this.tabManagers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMANAGERS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mANAGERBindingSource)).BeginInit();
             this.tabClients.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLIENTS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
             this.tabOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewORDERS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dESTINATIONBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDERBindingSource)).BeginInit();
             this.tabDestination.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDESTINATION)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oWNERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fILIALBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANAGERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dESTINATIONBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -153,7 +153,7 @@
             this.tabControl.Controls.Add(this.tabClients);
             this.tabControl.Controls.Add(this.tabOrders);
             this.tabControl.Controls.Add(this.tabDestination);
-            this.tabControl.Location = new System.Drawing.Point(0, 3);
+            this.tabControl.Location = new System.Drawing.Point(1, 3);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(817, 374);
@@ -167,7 +167,7 @@
             this.tabOwners.Location = new System.Drawing.Point(4, 25);
             this.tabOwners.Name = "tabOwners";
             this.tabOwners.Padding = new System.Windows.Forms.Padding(3);
-            this.tabOwners.Size = new System.Drawing.Size(1089, 345);
+            this.tabOwners.Size = new System.Drawing.Size(809, 345);
             this.tabOwners.TabIndex = 0;
             this.tabOwners.Text = "Owners";
             this.tabOwners.UseVisualStyleBackColor = true;
@@ -208,9 +208,38 @@
             this.dataGridViewOWNER.Location = new System.Drawing.Point(0, 36);
             this.dataGridViewOWNER.Name = "dataGridViewOWNER";
             this.dataGridViewOWNER.RowTemplate.Height = 24;
-            this.dataGridViewOWNER.Size = new System.Drawing.Size(1089, 306);
+            this.dataGridViewOWNER.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewOWNER.TabIndex = 0;
-            this.dataGridViewOWNER.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ownerIDDataGridViewTextBoxColumn
+            // 
+            this.ownerIDDataGridViewTextBoxColumn.DataPropertyName = "Owner_ID";
+            this.ownerIDDataGridViewTextBoxColumn.HeaderText = "Owner_ID";
+            this.ownerIDDataGridViewTextBoxColumn.Name = "ownerIDDataGridViewTextBoxColumn";
+            this.ownerIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ownerNAMEDataGridViewTextBoxColumn
+            // 
+            this.ownerNAMEDataGridViewTextBoxColumn.DataPropertyName = "Owner_NAME";
+            this.ownerNAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
+            this.ownerNAMEDataGridViewTextBoxColumn.Name = "ownerNAMEDataGridViewTextBoxColumn";
+            // 
+            // ownerSURNAMEDataGridViewTextBoxColumn
+            // 
+            this.ownerSURNAMEDataGridViewTextBoxColumn.DataPropertyName = "Owner_SURNAME";
+            this.ownerSURNAMEDataGridViewTextBoxColumn.HeaderText = "SURNAME";
+            this.ownerSURNAMEDataGridViewTextBoxColumn.Name = "ownerSURNAMEDataGridViewTextBoxColumn";
+            // 
+            // cOMPANiesDataGridViewTextBoxColumn
+            // 
+            this.cOMPANiesDataGridViewTextBoxColumn.DataPropertyName = "COMPANies";
+            this.cOMPANiesDataGridViewTextBoxColumn.HeaderText = "COMPANies";
+            this.cOMPANiesDataGridViewTextBoxColumn.Name = "cOMPANiesDataGridViewTextBoxColumn";
+            this.cOMPANiesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // oWNERBindingSource
+            // 
+            this.oWNERBindingSource.DataSource = typeof(ClassLibrary.OWNER);
             // 
             // tabCompany
             // 
@@ -220,7 +249,7 @@
             this.tabCompany.Location = new System.Drawing.Point(4, 25);
             this.tabCompany.Name = "tabCompany";
             this.tabCompany.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCompany.Size = new System.Drawing.Size(1089, 345);
+            this.tabCompany.Size = new System.Drawing.Size(809, 345);
             this.tabCompany.TabIndex = 1;
             this.tabCompany.Text = "Company";
             this.tabCompany.UseVisualStyleBackColor = true;
@@ -257,15 +286,20 @@
             this.companyIDDataGridViewTextBoxColumn,
             this.companyLOCATIONDataGridViewTextBoxColumn,
             this.companyOWNERSDataGridViewTextBoxColumn,
+            this.OWNER,
             this.oWNERDataGridViewTextBoxColumn,
-            this.fILIALsDataGridViewTextBoxColumn,
-            this.OWNERS});
+            this.fILIALsDataGridViewTextBoxColumn});
             this.dataGridViewCOMPANY.DataSource = this.cOMPANYBindingSource;
             this.dataGridViewCOMPANY.Location = new System.Drawing.Point(0, 36);
             this.dataGridViewCOMPANY.Name = "dataGridViewCOMPANY";
             this.dataGridViewCOMPANY.RowTemplate.Height = 24;
-            this.dataGridViewCOMPANY.Size = new System.Drawing.Size(1089, 306);
+            this.dataGridViewCOMPANY.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewCOMPANY.TabIndex = 0;
+            this.dataGridViewCOMPANY.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewCOMPANY_DataError);
+            // 
+            // cOMPANYBindingSource
+            // 
+            this.cOMPANYBindingSource.DataSource = typeof(ClassLibrary.COMPANY);
             // 
             // tabFilial
             // 
@@ -275,7 +309,7 @@
             this.tabFilial.Location = new System.Drawing.Point(4, 25);
             this.tabFilial.Name = "tabFilial";
             this.tabFilial.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFilial.Size = new System.Drawing.Size(1089, 345);
+            this.tabFilial.Size = new System.Drawing.Size(809, 345);
             this.tabFilial.TabIndex = 2;
             this.tabFilial.Text = "Filial";
             this.tabFilial.UseVisualStyleBackColor = true;
@@ -312,15 +346,20 @@
             this.filialIDDataGridViewTextBoxColumn,
             this.filialLOCATIONDataGridViewTextBoxColumn,
             this.filialCOMPANYDataGridViewTextBoxColumn,
+            this.COMPANY,
             this.cOMPANYDataGridViewTextBoxColumn,
-            this.mANAGERSDataGridViewTextBoxColumn,
-            this.Column1});
+            this.mANAGERSDataGridViewTextBoxColumn});
             this.dataGridViewFILIAL.DataSource = this.fILIALBindingSource;
             this.dataGridViewFILIAL.Location = new System.Drawing.Point(0, 36);
             this.dataGridViewFILIAL.Name = "dataGridViewFILIAL";
             this.dataGridViewFILIAL.RowTemplate.Height = 24;
-            this.dataGridViewFILIAL.Size = new System.Drawing.Size(1089, 306);
+            this.dataGridViewFILIAL.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewFILIAL.TabIndex = 1;
+            this.dataGridViewFILIAL.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewFILIAL_DataError);
+            // 
+            // fILIALBindingSource
+            // 
+            this.fILIALBindingSource.DataSource = typeof(ClassLibrary.FILIAL);
             // 
             // tabManagers
             // 
@@ -378,18 +417,23 @@
             this.managerIDDataGridViewTextBoxColumn,
             this.managerSURNAMEDataGridViewTextBoxColumn,
             this.managerRANKDataGridViewTextBoxColumn,
+            this.Column1,
             this.managerFILIALDataGridViewTextBoxColumn,
             this.fILIALDataGridViewTextBoxColumn,
-            this.oRDERSDataGridViewTextBoxColumn,
-            this.Filial});
+            this.oRDERSDataGridViewTextBoxColumn});
             this.dataGridViewMANAGERS.DataSource = this.mANAGERBindingSource;
             this.dataGridViewMANAGERS.Location = new System.Drawing.Point(0, 36);
             this.dataGridViewMANAGERS.Name = "dataGridViewMANAGERS";
             this.dataGridViewMANAGERS.RowTemplate.Height = 24;
             this.dataGridViewMANAGERS.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewMANAGERS.TabIndex = 1;
+            this.dataGridViewMANAGERS.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewMANAGERS_DataError);
             this.dataGridViewMANAGERS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewMANAGERS_EditingControlShowing);
             this.dataGridViewMANAGERS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewMANAGERS_KeyPress);
+            // 
+            // mANAGERBindingSource
+            // 
+            this.mANAGERBindingSource.DataSource = typeof(ClassLibrary.MANAGER);
             // 
             // tabClients
             // 
@@ -455,6 +499,10 @@
             this.dataGridViewCLIENTS.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewCLIENTS.TabIndex = 2;
             // 
+            // cLIENTBindingSource
+            // 
+            this.cLIENTBindingSource.DataSource = typeof(ClassLibrary.CLIENT);
+            // 
             // tabOrders
             // 
             this.tabOrders.Controls.Add(this.buttonOrderSearch);
@@ -510,24 +558,33 @@
             this.orderNAMEDataGridViewTextBoxColumn,
             this.orderIDDataGridViewTextBoxColumn,
             this.orderMANAGERDataGridViewTextBoxColumn,
+            this.orderPRICEDataGridViewTextBoxColumn,
+            this.Manager,
+            this.Destination,
+            this.Client,
             this.orderDESTINATIONDataGridViewTextBoxColumn,
             this.orderDURATIONDataGridViewTextBoxColumn,
-            this.orderPRICEDataGridViewTextBoxColumn,
             this.orderCLIENTDataGridViewTextBoxColumn,
             this.cLIENTDataGridViewTextBoxColumn,
             this.dESTINATIONDataGridViewTextBoxColumn,
-            this.mANAGERDataGridViewTextBoxColumn,
-            this.Manager,
-            this.Client,
-            this.Destination});
+            this.mANAGERDataGridViewTextBoxColumn});
             this.dataGridViewORDERS.DataSource = this.oRDERBindingSource;
             this.dataGridViewORDERS.Location = new System.Drawing.Point(0, 36);
             this.dataGridViewORDERS.Name = "dataGridViewORDERS";
             this.dataGridViewORDERS.RowTemplate.Height = 24;
             this.dataGridViewORDERS.Size = new System.Drawing.Size(809, 306);
             this.dataGridViewORDERS.TabIndex = 3;
+            this.dataGridViewORDERS.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dataGridViewORDERS_DataError);
             this.dataGridViewORDERS.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewORDERS_EditingControlShowing);
             this.dataGridViewORDERS.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewORDERS_KeyPress);
+            // 
+            // dESTINATIONBindingSource
+            // 
+            this.dESTINATIONBindingSource.DataSource = typeof(ClassLibrary.DESTINATION);
+            // 
+            // oRDERBindingSource
+            // 
+            this.oRDERBindingSource.DataSource = typeof(ClassLibrary.ORDER);
             // 
             // tabDestination
             // 
@@ -593,60 +650,6 @@
             this.destinationNAMEDataGridViewTextBoxColumn1.HeaderText = "Destination_NAME";
             this.destinationNAMEDataGridViewTextBoxColumn1.Name = "destinationNAMEDataGridViewTextBoxColumn1";
             // 
-            // ownerIDDataGridViewTextBoxColumn
-            // 
-            this.ownerIDDataGridViewTextBoxColumn.DataPropertyName = "Owner_ID";
-            this.ownerIDDataGridViewTextBoxColumn.HeaderText = "Owner_ID";
-            this.ownerIDDataGridViewTextBoxColumn.Name = "ownerIDDataGridViewTextBoxColumn";
-            this.ownerIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ownerNAMEDataGridViewTextBoxColumn
-            // 
-            this.ownerNAMEDataGridViewTextBoxColumn.DataPropertyName = "Owner_NAME";
-            this.ownerNAMEDataGridViewTextBoxColumn.HeaderText = "NAME";
-            this.ownerNAMEDataGridViewTextBoxColumn.Name = "ownerNAMEDataGridViewTextBoxColumn";
-            // 
-            // ownerSURNAMEDataGridViewTextBoxColumn
-            // 
-            this.ownerSURNAMEDataGridViewTextBoxColumn.DataPropertyName = "Owner_SURNAME";
-            this.ownerSURNAMEDataGridViewTextBoxColumn.HeaderText = "SURNAME";
-            this.ownerSURNAMEDataGridViewTextBoxColumn.Name = "ownerSURNAMEDataGridViewTextBoxColumn";
-            // 
-            // cOMPANiesDataGridViewTextBoxColumn
-            // 
-            this.cOMPANiesDataGridViewTextBoxColumn.DataPropertyName = "COMPANies";
-            this.cOMPANiesDataGridViewTextBoxColumn.HeaderText = "COMPANies";
-            this.cOMPANiesDataGridViewTextBoxColumn.Name = "cOMPANiesDataGridViewTextBoxColumn";
-            this.cOMPANiesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // oWNERBindingSource
-            // 
-            this.oWNERBindingSource.DataSource = typeof(ClassLibrary.OWNER);
-            // 
-            // cOMPANYBindingSource
-            // 
-            this.cOMPANYBindingSource.DataSource = typeof(ClassLibrary.COMPANY);
-            // 
-            // fILIALBindingSource
-            // 
-            this.fILIALBindingSource.DataSource = typeof(ClassLibrary.FILIAL);
-            // 
-            // mANAGERBindingSource
-            // 
-            this.mANAGERBindingSource.DataSource = typeof(ClassLibrary.MANAGER);
-            // 
-            // cLIENTBindingSource
-            // 
-            this.cLIENTBindingSource.DataSource = typeof(ClassLibrary.CLIENT);
-            // 
-            // oRDERBindingSource
-            // 
-            this.oRDERBindingSource.DataSource = typeof(ClassLibrary.ORDER);
-            // 
-            // dESTINATIONBindingSource
-            // 
-            this.dESTINATIONBindingSource.DataSource = typeof(ClassLibrary.DESTINATION);
-            // 
             // companyNAMEDataGridViewTextBoxColumn
             // 
             this.companyNAMEDataGridViewTextBoxColumn.DataPropertyName = "Company_NAME";
@@ -673,6 +676,15 @@
             this.companyOWNERSDataGridViewTextBoxColumn.Name = "companyOWNERSDataGridViewTextBoxColumn";
             this.companyOWNERSDataGridViewTextBoxColumn.Visible = false;
             // 
+            // OWNER
+            // 
+            this.OWNER.DataPropertyName = "Company_OWNERS";
+            this.OWNER.DataSource = this.oWNERBindingSource;
+            this.OWNER.DisplayMember = "Owner_SURNAME";
+            this.OWNER.HeaderText = "OWNER";
+            this.OWNER.Name = "OWNER";
+            this.OWNER.ValueMember = "Owner_ID";
+            // 
             // oWNERDataGridViewTextBoxColumn
             // 
             this.oWNERDataGridViewTextBoxColumn.DataPropertyName = "OWNER";
@@ -686,15 +698,6 @@
             this.fILIALsDataGridViewTextBoxColumn.HeaderText = "FILIALs";
             this.fILIALsDataGridViewTextBoxColumn.Name = "fILIALsDataGridViewTextBoxColumn";
             this.fILIALsDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // OWNERS
-            // 
-            this.OWNERS.DataPropertyName = "Company_OWNERS";
-            this.OWNERS.DataSource = this.oWNERBindingSource;
-            this.OWNERS.DisplayMember = "Owner_SURNAME";
-            this.OWNERS.HeaderText = "OWNERS";
-            this.OWNERS.Name = "OWNERS";
-            this.OWNERS.ValueMember = "Owner_ID";
             // 
             // filialNAMEDataGridViewTextBoxColumn
             // 
@@ -722,6 +725,15 @@
             this.filialCOMPANYDataGridViewTextBoxColumn.Name = "filialCOMPANYDataGridViewTextBoxColumn";
             this.filialCOMPANYDataGridViewTextBoxColumn.Visible = false;
             // 
+            // COMPANY
+            // 
+            this.COMPANY.DataPropertyName = "Filial_COMPANY";
+            this.COMPANY.DataSource = this.fILIALBindingSource;
+            this.COMPANY.DisplayMember = "Filial_NAME";
+            this.COMPANY.HeaderText = "COMPANY";
+            this.COMPANY.Name = "COMPANY";
+            this.COMPANY.ValueMember = "Filial_ID";
+            // 
             // cOMPANYDataGridViewTextBoxColumn
             // 
             this.cOMPANYDataGridViewTextBoxColumn.DataPropertyName = "COMPANY";
@@ -735,15 +747,6 @@
             this.mANAGERSDataGridViewTextBoxColumn.HeaderText = "MANAGERS";
             this.mANAGERSDataGridViewTextBoxColumn.Name = "mANAGERSDataGridViewTextBoxColumn";
             this.mANAGERSDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Filial_COMPANY";
-            this.Column1.DataSource = this.cOMPANYBindingSource;
-            this.Column1.DisplayMember = "Company_NAME";
-            this.Column1.HeaderText = "COMPANY";
-            this.Column1.Name = "Column1";
-            this.Column1.ValueMember = "Company_ID";
             // 
             // managerNAMEDataGridViewTextBoxColumn
             // 
@@ -770,6 +773,15 @@
             this.managerRANKDataGridViewTextBoxColumn.HeaderText = "RANK";
             this.managerRANKDataGridViewTextBoxColumn.Name = "managerRANKDataGridViewTextBoxColumn";
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Manager_FILIAL";
+            this.Column1.DataSource = this.fILIALBindingSource;
+            this.Column1.DisplayMember = "Filial_NAME";
+            this.Column1.HeaderText = "FILIAL";
+            this.Column1.Name = "Column1";
+            this.Column1.ValueMember = "Filial_ID";
+            // 
             // managerFILIALDataGridViewTextBoxColumn
             // 
             this.managerFILIALDataGridViewTextBoxColumn.DataPropertyName = "Manager_FILIAL";
@@ -790,15 +802,6 @@
             this.oRDERSDataGridViewTextBoxColumn.HeaderText = "ORDERS";
             this.oRDERSDataGridViewTextBoxColumn.Name = "oRDERSDataGridViewTextBoxColumn";
             this.oRDERSDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Filial
-            // 
-            this.Filial.DataPropertyName = "Manager_FILIAL";
-            this.Filial.DataSource = this.fILIALBindingSource;
-            this.Filial.DisplayMember = "Filial_NAME";
-            this.Filial.HeaderText = "FILIAL";
-            this.Filial.Name = "Filial";
-            this.Filial.ValueMember = "Filial_ID";
             // 
             // clientNAMEDataGridViewTextBoxColumn
             // 
@@ -848,9 +851,42 @@
             // orderMANAGERDataGridViewTextBoxColumn
             // 
             this.orderMANAGERDataGridViewTextBoxColumn.DataPropertyName = "Order_MANAGER";
-            this.orderMANAGERDataGridViewTextBoxColumn.HeaderText = "Order_MANAGER";
+            this.orderMANAGERDataGridViewTextBoxColumn.HeaderText = "MANAGER";
             this.orderMANAGERDataGridViewTextBoxColumn.Name = "orderMANAGERDataGridViewTextBoxColumn";
             this.orderMANAGERDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // orderPRICEDataGridViewTextBoxColumn
+            // 
+            this.orderPRICEDataGridViewTextBoxColumn.DataPropertyName = "Order_PRICE";
+            this.orderPRICEDataGridViewTextBoxColumn.HeaderText = "PRICE";
+            this.orderPRICEDataGridViewTextBoxColumn.Name = "orderPRICEDataGridViewTextBoxColumn";
+            // 
+            // Manager
+            // 
+            this.Manager.DataPropertyName = "Order_MANAGER";
+            this.Manager.DataSource = this.mANAGERBindingSource;
+            this.Manager.DisplayMember = "Manager_SURNAME";
+            this.Manager.HeaderText = "MANAGER";
+            this.Manager.Name = "Manager";
+            this.Manager.ValueMember = "Manager_ID";
+            // 
+            // Destination
+            // 
+            this.Destination.DataPropertyName = "Order_DESTINATION";
+            this.Destination.DataSource = this.dESTINATIONBindingSource;
+            this.Destination.DisplayMember = "Destination_NAME";
+            this.Destination.HeaderText = "DESTINATION";
+            this.Destination.Name = "Destination";
+            this.Destination.ValueMember = "Destination_ID";
+            // 
+            // Client
+            // 
+            this.Client.DataPropertyName = "Order_CLIENT";
+            this.Client.DataSource = this.cLIENTBindingSource;
+            this.Client.DisplayMember = "Client_SURNAME";
+            this.Client.HeaderText = "CLIENT";
+            this.Client.Name = "Client";
+            this.Client.ValueMember = "Client_ID";
             // 
             // orderDESTINATIONDataGridViewTextBoxColumn
             // 
@@ -862,14 +898,9 @@
             // orderDURATIONDataGridViewTextBoxColumn
             // 
             this.orderDURATIONDataGridViewTextBoxColumn.DataPropertyName = "Order_DURATION";
-            this.orderDURATIONDataGridViewTextBoxColumn.HeaderText = "DURATION";
+            this.orderDURATIONDataGridViewTextBoxColumn.HeaderText = "Order_DURATION";
             this.orderDURATIONDataGridViewTextBoxColumn.Name = "orderDURATIONDataGridViewTextBoxColumn";
-            // 
-            // orderPRICEDataGridViewTextBoxColumn
-            // 
-            this.orderPRICEDataGridViewTextBoxColumn.DataPropertyName = "Order_PRICE";
-            this.orderPRICEDataGridViewTextBoxColumn.HeaderText = "PRICE";
-            this.orderPRICEDataGridViewTextBoxColumn.Name = "orderPRICEDataGridViewTextBoxColumn";
+            this.orderDURATIONDataGridViewTextBoxColumn.Visible = false;
             // 
             // orderCLIENTDataGridViewTextBoxColumn
             // 
@@ -898,33 +929,6 @@
             this.mANAGERDataGridViewTextBoxColumn.HeaderText = "MANAGER";
             this.mANAGERDataGridViewTextBoxColumn.Name = "mANAGERDataGridViewTextBoxColumn";
             this.mANAGERDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // Manager
-            // 
-            this.Manager.DataPropertyName = "Order_MANAGER";
-            this.Manager.DataSource = this.mANAGERBindingSource;
-            this.Manager.DisplayMember = "Manager_SURNAME";
-            this.Manager.HeaderText = "MANAGER";
-            this.Manager.Name = "Manager";
-            this.Manager.ValueMember = "Manager_ID";
-            // 
-            // Client
-            // 
-            this.Client.DataPropertyName = "Order_CLIENT";
-            this.Client.DataSource = this.cLIENTBindingSource;
-            this.Client.DisplayMember = "Client_SURNAME";
-            this.Client.HeaderText = "CLIENT";
-            this.Client.Name = "Client";
-            this.Client.ValueMember = "Client_ID";
-            // 
-            // Destination
-            // 
-            this.Destination.DataPropertyName = "Order_DESTINATION";
-            this.Destination.DataSource = this.dESTINATIONBindingSource;
-            this.Destination.DisplayMember = "Destination_NAME";
-            this.Destination.HeaderText = "DESTINATION";
-            this.Destination.Name = "Destination";
-            this.Destination.ValueMember = "Destination_ID";
             // 
             // destinationNAMEDataGridViewTextBoxColumn
             // 
@@ -957,25 +961,25 @@
             this.tabControl.ResumeLayout(false);
             this.tabOwners.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOWNER)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oWNERBindingSource)).EndInit();
             this.tabCompany.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCOMPANY)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).EndInit();
             this.tabFilial.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFILIAL)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fILIALBindingSource)).EndInit();
             this.tabManagers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMANAGERS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mANAGERBindingSource)).EndInit();
             this.tabClients.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCLIENTS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
             this.tabOrders.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewORDERS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dESTINATIONBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.oRDERBindingSource)).EndInit();
             this.tabDestination.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDESTINATION)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oWNERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMPANYBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fILIALBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mANAGERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.oRDERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dESTINATIONBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1031,24 +1035,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn companyIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyLOCATIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyOWNERSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OWNER;
         private System.Windows.Forms.DataGridViewTextBoxColumn oWNERDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fILIALsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn OWNERS;
         private System.Windows.Forms.DataGridViewTextBoxColumn filialNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filialIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filialLOCATIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filialCOMPANYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn COMPANY;
         private System.Windows.Forms.DataGridViewTextBoxColumn cOMPANYDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mANAGERSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerSURNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerRANKDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn managerFILIALDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fILIALDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Filial;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientSURNAMEDataGridViewTextBoxColumn;
@@ -1057,16 +1061,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderMANAGERDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orderPRICEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Manager;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Destination;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Client;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDESTINATIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDURATIONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderPRICEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderCLIENTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLIENTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESTINATIONDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mANAGERDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Manager;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Client;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Destination;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationNAMEDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinationIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oRDERSDataGridViewTextBoxColumn2;
